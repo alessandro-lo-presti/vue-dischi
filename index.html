@@ -17,15 +17,16 @@
         <header>
           <div class="container">
             <img src="logo.png" alt="logo" />
-            <select name="g">
-
+            <select v-model="visible">
+              <option value="all">All</option>
+              <option v-for="g in genre" :value="g">{{ g }}</option>
             </select>
           </div>
         </header>
 
         <div class="cds-container container">
 
-          <div class="cd" v-for="c in cd">
+          <div class="cd" v-for="c in cd" v-if="visible == 'all' || c.genre == visible">
             <img :src="c.poster" alt="">
             <h3>{{ c.title }}</h3>
             <span class="author">{{ c.author }}</span>
