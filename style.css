@@ -14,6 +14,12 @@ body {
     width: 1070px;
     height: 100%;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container select {
+  align-self: center;
 }
 
 header {
